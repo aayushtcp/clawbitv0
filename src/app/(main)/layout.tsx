@@ -27,7 +27,9 @@ export default function ErrorLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased 2xl:max-w-450 2xl:mx-auto`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased 2xl:max-w-450 2xl:mx-auto`}
+      >
         <LoadingIndex />
         <Navbar />
         {children}

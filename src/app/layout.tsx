@@ -24,7 +24,12 @@ export default function MainLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body
+        suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} antialiased 2xl:max-w-450 2xl:mx-auto`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
