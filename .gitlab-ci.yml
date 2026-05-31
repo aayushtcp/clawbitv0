@@ -1,0 +1,52 @@
+stages:
+  - build
+
+build:
+  stage: build
+  image: node:22-alpine
+  script:
+    - npm install
+    - npm run build
+
+
+#! Deployment section
+# variables:
+#   PROJECT_PATH: /home/ubuntu/clawbit/portal/
+#   DH_USER: ubuntu
+#   IMAGE_NAME: clawbit_portal
+
+# stages:
+#   - deploy
+
+# deploy_production:
+#   stage: deploy
+#   image: alpine:latest
+
+#   before_script:
+#     - apk add --no-cache openssh git curl
+#     - eval $(ssh-agent -s)
+#     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+#     - mkdir -p ~/.ssh
+#     - chmod 700 ~/.ssh
+#     - ssh-keyscan -H "$DH_HOST" >> ~/.ssh/known_hosts
+
+#   script:
+#     - |
+#       ssh $DH_USER@$DH_HOST "bash -e -c '
+#         echo \"[INFO] Connected to server\"
+
+#         cd $PROJECT_PATH || { echo \"[ERROR] Failed to enter project directory\"; exit 1; }
+
+#         echo \"[STEP] Pulling latest code...\"
+#         git fetch origin main || { echo \"[ERROR] Git fetch failed\"; exit 1; }
+#         git reset --hard origin/main || { echo \"[ERROR] Git reset failed\"; exit 1; }
+
+#         echo \"[STEP] Running deployment script...\"
+#         chmod +x deployment.sh || { echo \"[ERROR] chmod failed\"; exit 1; }
+#         ./deployment.sh || { echo \"[ERROR] deployment script failed\"; exit 1; }
+
+#         echo \"[SUCCESS] Remote deployment finished\"
+#       '"
+
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "main"'

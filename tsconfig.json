@@ -1,0 +1,70 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "baseUrl": "./src",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["*"],
+
+      "@app/*": ["app/*"],
+
+      "@shared/*": ["shared/*"],
+      "@shared-components/*": ["shared/components/*"],
+      "@shared-types/*": ["shared/@types/*"],
+      "@shared-utils/*": ["shared/utils/*"],
+      "@shared-constants/*": ["shared/constants/*"],
+      "@shared-hooks/*": ["shared/hooks/*"],
+
+      "@domains/*": ["domains/*"],
+      "@home-types/*": ["domains/home/@types/*"],
+      "@home-components/*": ["domains/home/components/*"],
+      "@home-constants/*": ["domains/home/constants/*"],
+
+      "@contact-types/*": ["domains/contact/@types/*"],
+      "@contact-components/*": ["domains/contact/components/*"],
+      "@contact-constants/*": ["domains/contact/constants/*"],
+
+      "@testimonial-types/*": ["domains/testimonial/@types/*"],
+      "@testimonial-components/*": ["domains/testimonial/components/*"],
+      "@testimonial-constants/*": ["domains/testimonial/constants/*"],
+
+      "@company-types/*": ["domains/company/@types/*"],
+      "@company-components/*": ["domains/company/components/*"],
+      "@company-constants/*": ["domains/company/constants/*"],
+
+      "@privacy-types/*": ["domains/privacy/@types/*"],
+      "@privacy-components/*": ["domains/privacy/components/*"],
+      "@privacy-constants/*": ["domains/privacy/constants/*"],
+
+      "@cookie-types/*": ["domains/cookie/@types/*"],
+      "@cookie-components/*": ["domains/cookie/components/*"],
+      "@cookie-constants/*": ["domains/cookie/constants/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

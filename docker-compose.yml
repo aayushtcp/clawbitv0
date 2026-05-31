@@ -1,0 +1,14 @@
+services:
+  clawbit_portal:
+    image: clawbit_portal:latest
+    container_name: clawbit_portal
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    networks:
+      - clawbit_portal_network
+
+networks:
+  clawbit_portal_network:
+    driver: bridge

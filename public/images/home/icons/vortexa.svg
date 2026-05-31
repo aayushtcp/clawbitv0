@@ -1,0 +1,19 @@
+<svg width="220" height="180" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
+
+  <path d="M55 45
+           L110 125
+           L165 45
+           H135
+           L110 82
+           L85 45 Z"
+        fill="black"/>
+
+  <path d="M80 45
+           L110 92
+           L140 45
+           H120
+           L110 62
+           L100 45 Z"
+        fill="black"/>
+
+</svg>

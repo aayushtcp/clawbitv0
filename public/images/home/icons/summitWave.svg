@@ -1,0 +1,10 @@
+<svg width="220" height="180" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40 90 L100 30 L180 90 L145 90 L100 55 L70 90 Z"
+        fill="black"/>
+
+  <path d="M45 100 Q110 60 175 100"
+        stroke="black"
+        stroke-width="8"
+        fill="none"/>
+
+</svg>
