@@ -1,0 +1,38 @@
+/**
+ * Cloudflare Worker configuration for OpenNext Next.js deployment.
+ *
+ * The `WORKER_SELF_REFERENCE` service binding MUST match `name`
+ * (see https://opennext.js.org/cloudflare/caching).
+ * Previously Cloudflare auto-generated a config with:
+ *   name = "clawbitv0" but service = "portal-clawbit" (from package.json),
+ * which failed with code 10143.
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "clawbitv0",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-29",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "images": {
+    "binding": "IMAGES"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "clawbitv0"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "portal-clawbit-opennext-cache"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
