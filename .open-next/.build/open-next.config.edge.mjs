@@ -209,7 +209,11 @@ function resolveCdnInvalidation(value = "dummy") {
 }
 
 // open-next.config.ts
-var open_next_config_default = defineCloudflareConfig();
+var open_next_config_default = defineCloudflareConfig({
+  // `build` script is `opennextjs-cloudflare build`. Without this, OpenNext
+  // would run the packager build command (`pnpm build`) and recurse forever.
+  buildCommand: "next build"
+});
 export {
   open_next_config_default as default
 };
